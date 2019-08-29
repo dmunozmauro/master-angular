@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Aprendiendo-Angular';
+  mostrar: boolean;
+
+  constructor() {
+    this.mostrar = true;
+  }
+
+  ocultar(value) {
+      this.mostrar = value;
+  }
 }
