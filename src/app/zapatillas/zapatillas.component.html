@@ -1,0 +1,10 @@
+<div [ngStyle]="{
+    'background' : fondo,
+    'border': '2px solid black',
+    'border-color': color
+}">
+    <p>Componente zapatillas</p>
+    <ul>
+        <li *ngFor="let zapatilla of zapatillas">{{zapatilla.marca}} {{zapatilla.nombre}}</li>
+    </ul>
+</div>

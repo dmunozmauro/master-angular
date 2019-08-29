@@ -1,2 +1,10 @@
-<h1>{{titulo}}</h1>
-<button (click)="cambiarTitulo()">Cambiar titulos</button>
+<div [ngStyle]="{
+    'background': fondo,
+    'border': '2px solid black',
+    'border-color': color
+}">
+    <p>{{title}}</p>
+    <h4>Titulo que cambia: {{titulo}}</h4>
+    <button (click)="cambiarTitulo()">Cambiar titulos</button>
+</div>
+<br>
