@@ -1,6 +1,16 @@
 <div [ngStyle]="{'text-align' : 'center'}">
     <h1>{{welcome}}</h1>
-    <img src="assets/logo.svg">
-    <p>Subtitulo de Angular</p>
-    <p>Nuevo</p>
+    <!-- <img src="assets/logo.svg"> -->
+
+    <div *ngIf="identificado; then login else logout"></div>
+
+    <ng-template #login>
+        <p>Estas identificado</p>
+        <button (click)="salir()">Salir</button>
+    </ng-template>
+
+    <ng-template #logout>
+        <p>No estas identificado, pulsa botón</p>
+        <button (click)="entrar()">Entrar</button>
+    </ng-template>
 </div>

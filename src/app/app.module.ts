@@ -7,19 +7,24 @@ import { AppComponent } from './app.component';
 import { HijoComponent } from './hijo/hijo.component';
 import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { HomeComponent } from './home/home.component';
+import { PeticionesComponent } from './peticiones/peticiones.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HijoComponent,
     ZapatillasComponent,
-    HomeComponent
+    HomeComponent,
+    PeticionesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

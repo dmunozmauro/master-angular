@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Zapatilla } from '../models/zapatilla';
 import { configuracion } from '../models/configuracion';
 
+import { ZapatillaServices } from '../services/zapatillas.services';
+import { Zapatilla } from '../models/zapatilla';
 
 @Component({
   selector: 'app-zapatillas',
   templateUrl: './zapatillas.component.html',
-  styleUrls: ['./zapatillas.component.css']
+  styleUrls: ['./zapatillas.component.css'],
+  providers: [ZapatillaServices]
 })
 export class ZapatillasComponent implements OnInit {
   public title: string;
@@ -22,28 +24,21 @@ export class ZapatillasComponent implements OnInit {
 
   constructor(
     private _route: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private _zapatillaService: ZapatillaServices
   ) {
     this.title = 'Componente de zapatillas';
     this.color = configuracion.color;
     this.fondo = configuracion.fondo;
-
-    this.zapatillas = [
-      new Zapatilla('Lunar', 1000, 'Nike', 'Negro', true),
-      new Zapatilla('Boost', 500, 'Addidas', 'Negro', false),
-      new Zapatilla('Classic', 100, 'Reebok', 'Negro', true),
-      new Zapatilla('Airforce', 1500, 'Nike', 'Roja', true),
-    ]
-
     this.marcas = new Array();
-    
   }
 
   ngOnInit() {
     this._route.params.subscribe((params: Params) => {
       this.nombre = params.marca;
-      console.log(this.nombre)
+      
     });
+    this.zapatillas = this._zapatillaService.getZapatillas();
     this.getMarcas();
   }
 
@@ -53,7 +48,6 @@ export class ZapatillasComponent implements OnInit {
         this.marcas.push(zapatilla.marca);
       }
     });
-    //console.log('Las marcas son: ', this.marcas)
   }
 
   getMarca() {

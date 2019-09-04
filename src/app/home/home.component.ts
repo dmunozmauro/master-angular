@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public welcome: string;
+  public identificado: boolean;
   constructor() { 
     this.welcome = '¡Bienvenido!';
+    this.identificado = false;
   }
 
   ngOnInit() {
+  }
+
+  entrar() {
+    this.identificado = true;
+  }
+
+  salir() {
+    this.identificado = false;
   }
 
 }
