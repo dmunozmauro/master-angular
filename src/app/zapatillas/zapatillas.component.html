@@ -3,8 +3,38 @@
     'border': '2px solid black',
     'border-color': color
 }">
-    <p>Componente zapatillas</p>
+    <h4>{{title}}</h4>
+
+    <p>Compra las zapatillas de las mejores marcas</p>
     <ul>
-        <li *ngFor="let zapatilla of zapatillas">{{zapatilla.marca}} {{zapatilla.nombre}}</li>
+        <li *ngFor="let miMarca of marcas">{{miMarca}}</li>
+    </ul>
+
+    <p>Las zapatillas disponibles son:</p>
+    <ul>
+        <li *ngFor="let zapatilla of zapatillas">
+            <span [ngStyle]="{'text-decoration' : !zapatilla.stock ? 'line-through' : 'none'}">
+                {{zapatilla.marca}} {{zapatilla.nombre}}
+                <strong>{{zapatilla.precio | currency:'CLP'}}</strong>
+                <span *ngIf="zapatilla.precio <= 500" [ngStyle]="{'font-weight': 'bold', 'color': color}">
+                    ¡OFERTA!</span>
+            </span>
+        </li>
+    </ul>
+
+
+    <ul [ngSwitch]="color">
+        <li *ngSwitchCase="'yellow'">
+            El color es <strong [ngStyle]="{'color': color}">amarillo</strong>
+        </li>
+        <li *ngSwitchCase="'red'">
+            El color es <strong [ngStyle]="{'color': color}">rojo</strong>
+        </li>
+        <li *ngSwitchCase="'green'">
+            El color es <strong [ngStyle]="{'color': color}">verde</strong>
+        </li>
+        <li *ngSwitchCase="'blue'">
+            El color es <strong [ngStyle]="{'color': color}">azul</strong>
+        </li>
     </ul>
 </div>
