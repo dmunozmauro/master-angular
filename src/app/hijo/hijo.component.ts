@@ -12,29 +12,34 @@ export class HijoComponent implements OnInit, DoCheck, OnDestroy {
   titulo: string;
   fondo: string;
   color: string;
+  mostrar: boolean;
+  
   constructor() {
     this.title = 'Componente hijo!';
     this.titulo = configuracion.descripcion;
     this.fondo = configuracion.fondo;
     this.color = configuracion.color;
-/*     console.log('constructor ejecutado');
- */  }
+    this.mostrar = true;
+  }
 
   ngOnInit() {
-/*     console.log('ngOnInit ejecutado');
- */  }
+  }
 
   ngDoCheck() {
-/*     console.log('DoCheck ejecutado');
- */  }
+
+  }
 
   ngOnDestroy() {
-/*     console.log('OnDestroy ejecutado');
- */  }
+
+  }
 
   cambiarTitulo() {
     this.titulo = 'Cambió !';
   }
+
+  ocultar(value) {
+    this.mostrar = value;
+}
 
 }
 

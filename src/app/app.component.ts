@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { configuracion } from './models/configuracion';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Curso de Angular';
-  mostrar: boolean;
+  public color: string;
+  public fondo: string;
 
   constructor() {
-    this.mostrar = true;
+    this.color = configuracion.color;
+    this.fondo = configuracion.fondo;
   }
 
-  ocultar(value) {
-      this.mostrar = value;
-  }
 }

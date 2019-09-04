@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 import { Zapatilla } from '../models/zapatilla';
 import { configuracion } from '../models/configuracion';
+
 
 @Component({
   selector: 'app-zapatillas',
@@ -13,8 +16,14 @@ export class ZapatillasComponent implements OnInit {
   public color: string;
   public fondo: string;
   public marcas: String[];
+  public mi_marca: string;
 
-  constructor() {
+  public nombre: string;
+
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router
+  ) {
     this.title = 'Componente de zapatillas';
     this.color = configuracion.color;
     this.fondo = configuracion.fondo;
@@ -27,9 +36,14 @@ export class ZapatillasComponent implements OnInit {
     ]
 
     this.marcas = new Array();
+    
   }
 
   ngOnInit() {
+    this._route.params.subscribe((params: Params) => {
+      this.nombre = params.marca;
+      console.log(this.nombre)
+    });
     this.getMarcas();
   }
 
@@ -39,7 +53,20 @@ export class ZapatillasComponent implements OnInit {
         this.marcas.push(zapatilla.marca);
       }
     });
-    console.log('Las marcas son: ', this.marcas)
+    //console.log('Las marcas son: ', this.marcas)
+  }
+
+  getMarca() {
+    alert(this.mi_marca);
+  }
+
+  addMarca() {
+    this.marcas.push(this.mi_marca);
+  }
+
+  borrarMarca(index) {
+    /* delete this.marcas[index]; */
+    this.marcas.splice(index, 1);
   }
 
 

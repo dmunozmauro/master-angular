@@ -1,10 +1,8 @@
-<div [ngStyle]="{
-    'background': fondo,
-    'border': '2px solid black',
-    'border-color': color
-}">
-    <p>{{title}}</p>
-    <h4>Titulo que cambia: {{titulo}}</h4>
+<div>
+    <h4>{{title}}</h4>
+    <!-- <button (click)="ocultar(false)" *ngIf="mostrar">Ocultar componente hijo</button>
+    <button (click)="ocultar(true)" *ngIf="!mostrar">Mostrar componente hijo</button> -->
+    <p>Titulo que cambia: <strong>{{titulo}}</strong> </p>
     <button (click)="cambiarTitulo()">Cambiar titulos</button>
 </div>
 <br>
