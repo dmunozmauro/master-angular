@@ -6,6 +6,31 @@
 
 <div *ngIf="user">
     <h2>Name: {{user.first_name + ' ' + user.last_name}} </h2>
-    
+
     <img src="{{user.avatar}}" width="200px">
+</div>
+
+<hr>
+<h2>Crear usuario</h2>
+<h2>Formulario de liquidos</h2>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+    <div class="form-group">
+        <label for="nombre">nombre: </label>
+        <input type="text" class="form-control" name="nombre" #nombre="ngModel" [(ngModel)]="new_user.name"
+            pattern="[a-zA-Z]+" required>
+        <span *ngIf="nombre.touched && !nombre.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="job">Trabajo: </label>
+        <input type="text" class="form-control" name="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+        <span *ngIf="job.touched && !job.valid">Campo obligatorio</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!newUser.form.valid">Enviar</button>
+</form>
+
+<div *ngIf="usuario_guardado">
+    <h3>NOMBRE: {{usuario_guardado.name}}</h3>
+    <h3>TRABAJO: {{usuario_guardado.job}}</h3>
+
 </div>

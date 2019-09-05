@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PeticionesComponent } from './peticiones/peticiones.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LiquidoComponent } from './liquido/liquido.component';
 
 import { CalculadoraPipes } from './pipes/calculadora.pipes';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -22,7 +23,8 @@ import { ContactoComponent } from './contacto/contacto.component';
     HomeComponent,
     PeticionesComponent,
     CalculadoraPipes,
-    ContactoComponent
+    ContactoComponent,
+    LiquidoComponent
   ],
   imports: [
     BrowserModule,

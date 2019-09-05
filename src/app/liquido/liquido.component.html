@@ -1,0 +1,35 @@
+<h2>Formulario de liquidos</h2>
+<form #formLiquido="ngForm" (ngSubmit)="onSubmit(formLiquido)">
+    <div class="form-group">
+        <label for="marca">Marca: </label>
+        <input type="text" class="form-control" name="marca" #marca="ngModel" [(ngModel)]="liquidos.marca" pattern="[a-zA-Z]+" required>
+        <span *ngIf="marca.touched && !marca.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="tipo">Tipo: </label>
+        <input type="text" class="form-control" name="tipo" #tipo="ngModel" [(ngModel)]="liquidos.tipo" required>
+        <span *ngIf="tipo.touched && !tipo.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="version">Version: </label>
+        <input type="text" class="form-control" name="version" #version="ngModel" [(ngModel)]="liquidos.version" required>
+        <span *ngIf="version.touched && !version.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="tamanio">Tamaño: </label>
+        <input type="text" class="form-control" name="tamanio" #tamanio="ngModel" [(ngModel)]="liquidos.tamanio" required>
+        <span *ngIf="tamanio.touched && !tamanio.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="miligramos">Miligramos: </label>
+        <input type="text" class="form-control" name="miligramos" #miligramos="ngModel" [(ngModel)]="liquidos.miligramos" pattern="[0-9]" required>
+        <span *ngIf="miligramos.touched && !miligramos.valid">Campo obligatorio</span>
+    </div>
+    <div class="form-group">
+        <label for="descripcion">Descripcion: </label>
+        <textarea class="form-control" name="descripcion" #descripcion="ngModel" [(ngModel)]="liquidos.descripcion" required></textarea>
+        <span *ngIf="descripcion.touched && !descripcion.valid">Campo obligatorio</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!formLiquido.form.valid">Enviar</button>
+</form>
