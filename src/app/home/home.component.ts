@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   public welcome: string;
   public identificado: boolean;
+  public fecha: any;
   constructor() { 
     this.welcome = '¡Bienvenido!';
     this.identificado = false;
+    this.fecha = new Date();
   }
 
   ngOnInit() {

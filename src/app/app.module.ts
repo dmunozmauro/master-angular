@@ -11,13 +11,18 @@ import { PeticionesComponent } from './peticiones/peticiones.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { CalculadoraPipes } from './pipes/calculadora.pipes';
+import { ContactoComponent } from './contacto/contacto.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     HijoComponent,
     ZapatillasComponent,
     HomeComponent,
-    PeticionesComponent
+    PeticionesComponent,
+    CalculadoraPipes,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
