@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { PeticionesComponent } from './peticiones/peticiones.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LiquidoComponent } from './liquido/liquido.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HijoComponent,
     ZapatillasComponent,
     HomeComponent,
-    PeticionesComponent
+    PeticionesComponent,
+    LiquidoComponent
   ],
   imports: [
     BrowserModule,
