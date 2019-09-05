@@ -1,11 +1,18 @@
 <div>
 
     <h4>{{title}}</h4>
-
-    <p>Añadir marca:</p>
-    <input type="text" [(ngModel)]="mi_marca">
-    <button (click)="getMarca()">Mostrar la Marca</button>
-    <button (click)="addMarca()">Agregar la Marca</button>
+    <div class="form-group">
+        <p>Añadir marca:</p>
+        <input type="text" [(ngModel)]="mi_marca">
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <button class="btn btn-primary" (click)="getMarca()">Mostrar la Marca</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" (click)="addMarca()">Agregar la Marca</button>
+        </div>
+    </div>
     <p>{{mi_marca}}</p>
 
 
@@ -13,7 +20,7 @@
     <p>Compra las zapatillas de las mejores marcas</p>
     <ul>
         <li *ngFor="let miMarca of marcas; let indice = index">{{miMarca}}
-            <button (click)="borrarMarca(indice)">Borrar</button>
+            <strong><a (click)="borrarMarca(indice)">Borrar</a></strong>
         </li>
     </ul>
 
