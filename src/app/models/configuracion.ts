@@ -1,6 +1,6 @@
 export var configuracion = {
     color: "red",
-    fondo: "#eee",
+    fondo: "#f8f9fa",
     tittulo: "Diego",
     descripcion: "prueba de json con ts"
 };

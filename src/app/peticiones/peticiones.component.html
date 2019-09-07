@@ -1,11 +1,12 @@
-<input type="text" [(ngModel)]="userId" (keyup.enter)="carga()">
+<h4>Componente Peticiones</h4>
+<input type="text" class="form-control" [(ngModel)]="userId" (keyup.enter)="carga()">
 
 <div *ngIf="!user">
     Cargando
 </div>
 
 <div *ngIf="user">
-    <h2>Name: {{user.first_name + ' ' + user.last_name}} </h2>
+    <h6>Name: {{user.first_name + ' ' + user.last_name}} </h6>
 
     <img src="{{user.avatar}}" width="200px">
 </div>
